@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown{
+    border-radius: 2px;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    transition: all 0.5s linear;
+    
+}
+.active{
+    width: 300px;
+    height: 50px;
+}
+.dropdown::before{
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    width: 12px;
+    height: 2px;
+    background: black;
+    z-index: 10;
+    transform: rotate(30deg);
+}
+.dropdown::after{
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 10px;
+    width: 12px;
+    height: 2px;
+    background: black;
+    z-index: 10;
+    transform: rotate(145deg);
+}
+.active::before{
+    content: "";
+    position: absolute;
+    top: 23px;
+    right: 10px;
+    
+}
+.active::after{
+    content: "";
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    
+}
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 16px;
+    z-index: -1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    
+}
+.option{
+    width: 300px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 20px;
+    justify-content: space-evenly;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+    /* z-index: -1; */
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+
+    
+}
+.dropdown .option div{
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: capitalize;
+    background: red;
+}
+.active .option{
+    visibility: visible;
+    opacity: 1;
+}
+.option_value{
+   
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: capitalize;
+}
